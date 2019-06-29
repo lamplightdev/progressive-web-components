@@ -1,0 +1,20 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  font-size: 1rem;
+  background-color: white;
+}
+
+x-item {
+  display: block;
+}
+
+x-form {
+  display: block;
+}
