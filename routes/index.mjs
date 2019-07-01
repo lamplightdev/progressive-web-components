@@ -17,19 +17,33 @@ router.get('/', async (request, response) => {
       <head>
         <link rel="stylesheet" href="/css/app.css">
         <script type="module" src="/js/elements/x-item.js" async></script>
+        <script type="module" src="/js/elements/x-container.js" async></script>
       </head>
       <body>
   `);
   response.write('<p>start</p>');
 
-  for (let num = 0; num < 10; num++) {
+  const items = [...Array(10).keys()].map(i => {
+    return {
+      id: i,
+      name: `Click me ${i}`
+    };
+  });
+
+  response.write('<x-container>');
+
+  for (let item of items) {
     response.write(`
-      <x-item num="${num}">
-        <button>Click me ${num}</button>
-      </x-item>
+      <p>
+        <x-item num="${item.id}">
+          <button>Click me ${item.name}</button>
+        </x-item>
+      </p>
     `);
     await delay(1000);
   }
+
+  response.write('</x-container>');
 
   const name = 'Ada';
   response.write(`
