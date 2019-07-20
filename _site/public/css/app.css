@@ -1,0 +1,31 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  font-size: 1rem;
+  background-color: white;
+}
+
+x-item {
+  position: relative;
+}
+
+x-item:not(:defined)::after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: steelblue;
+}
+
+x-form {
+  display: block;
+}
